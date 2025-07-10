@@ -1,0 +1,44 @@
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+#swirl-container {
+  display: grid;
+  gap: 40px;
+  grid-template-areas:
+    "s1 . ."
+    ". s2 ."
+    ". . s3";
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  place-items: center;
+}
+
+#swirl1,
+#swirl2,
+#swirl3 {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 0 8px #00cec9);
+  transition: transform 0.3s ease;
+}
+
+#swirl1 { grid-area: s1; }
+#swirl2 { grid-area: s2; }
+#swirl3 { grid-area: s3; }
+
+
+#swirl1:hover,
+#swirl2:hover,
+#swirl3:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px #00cec9);
+}
